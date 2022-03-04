@@ -65,3 +65,7 @@ after repeating step-1 and 2 then,
 11. t.all()
 for example
 12. t.filter(name__Startwith="Tim") for int t.filter(id=1)
+
+
+create admin dashboard:
+python manage.py createsuperuser 
