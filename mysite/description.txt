@@ -1,0 +1,48 @@
+Process:
+1. Make a folder then open it on VS Code
+2. django-admin startproject DJANGO_COURSE
+3. cd DJANGO_COURSE
+4. python manage.py runserver
+5. After that go this link: http://127.0.0.1:8000
+6. python manage.py startapp myapp
+
+7. Then you can add urls.py in your app and then write code in views.py and then connect it with main projects urls.py.
+in main projects urls.py=
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include("main.urls")),
+]
+in apps urls.py=
+from django.urls import path
+
+from . import views 
+
+urlpatterns = [
+    path("",views.index,name='index'),
+    path("v1/",views.v1,name='view 1'),
+
+]
+it's an example, you have to do it like this.
+
+8. Then go to main projects setting.py write your app name in installed apps
+9. Then create model as, how you like.
+10. Make sure everythis saved then python manage.py makemigrations appname
+11. Then python manage.py migrate 
+N:B: Everytime you changed apps models.py you need to do process 10 and then 11.
+
+
+
+*** Add list in database from shell.
+1. python manage.py shell(*obiously from your projects directory)
+2. from main.models import ToDoList, Item (main= appname)
+3. t = ToDoList(name="Nahid\'s List")
+4. t.save(), for saving this in database.
+5. To see all objects, ToDoList.objects.all()
+6. To find objects in database, ToDoList.objects.get(id=which number you want to find)
+now add items on list:
+1. t.item_set.create(text="got to null",complete=False) (*how many attribute you have in your item you have to write here)
+2.  t.item_set.all(), to see all items
+3. to find particular item,  t.itm_set.get(id=which number you want to find)
