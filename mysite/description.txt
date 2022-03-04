@@ -46,3 +46,15 @@ now add items on list:
 1. t.item_set.create(text="got to null",complete=False) (*how many attribute you have in your item you have to write here)
 2.  t.item_set.all(), to see all items
 3. to find particular item,  t.itm_set.get(id=which number you want to find)
+
+
+dynamic page linking:
+example:
+def index(response, id):
+    return HttpResponse("<h1>%s</h1>" %id)
+
+urlpatterns = [
+    path("<int:id>",views.index,name='index'),
+   
+
+]
