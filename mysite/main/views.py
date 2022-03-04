@@ -5,8 +5,10 @@ from .models import ToDoList, Item
 # Create your views here.
 
 def index(response, id):
+
+    
     ls  = ToDoList.objects.get(id=id)
-    return render(response, "main/base.html", {"name":ls.name})
+    return render(response, "main/base.html", {})
 
 def home(response):
-    return render(response, "main/home.html", {"name":"test"})
+    return render(response, "main/home.html", {})
