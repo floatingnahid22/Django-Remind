@@ -43,9 +43,9 @@ N:B: Everytime you changed apps models.py you need to do process 10 and then 11.
 5. To see all objects, ToDoList.objects.all()
 6. To find objects in database, ToDoList.objects.get(id=which number you want to find)
 now add items on list:
-1. t.item_set.create(text="got to null",complete=False) (*how many attribute you have in your item you have to write here)
-2.  t.item_set.all(), to see all items
-3. to find particular item,  t.itm_set.get(id=which number you want to find)
+7. t.item_set.create(text="got to null",complete=False) (*how many attribute you have in your item you have to write here)
+8.  t.item_set.all(), to see all items
+9. to find particular item,  t.itm_set.get(id=which number you want to find)
 
 
 dynamic page linking:
@@ -58,3 +58,10 @@ urlpatterns = [
    
 
 ]
+
+for filtering:
+after repeating step-1 and 2 then,
+10. t = ToDoList.objects
+11. t.all()
+for example
+12. t.filter(name__Startwith="Tim") for int t.filter(id=1)
