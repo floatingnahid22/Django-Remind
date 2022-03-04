@@ -1,5 +1,10 @@
 % extends "main/base.html %"
 
-{% block title %} 
-
+{% block title %}
+    <h1>{{ls.name}}</h1>
+    <ul>
+        {% for item in ls.item_Set.all %}
+            <li>{{item.text}}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
