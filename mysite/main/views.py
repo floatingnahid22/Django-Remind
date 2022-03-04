@@ -3,8 +3,6 @@ from django.http import HttpRequest, HttpResponse
 
 # Create your views here.
 
-def index(response):
-    return HttpResponse("<h1>Hello World</h1>")
+def index(response, id):
+    return HttpResponse("<h1>%s</h1>" %id)
 
-def v1(response):
-    return HttpResponse("<h1>View 1</h1>")
