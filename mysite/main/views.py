@@ -38,6 +38,7 @@ def create(response):
             n = form.cleaned_data["name"]
             t = ToDoList(name=n)
             t.save()
+            response.user.todolist.add(t)  # adds the to do list to the current logged in user
         return HttpResponseRedirect("/%i" %t.id)    
     else:        
         form  = CreateNewList()
